@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1072067674153",
+    "project_id": "pnuwordpad",
+    "storage_bucket": "pnuwordpad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072067674153:android:728465f4e74faa84b99c38",
+        "android_client_info": {
+          "package_name": "com.example.swordcard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072067674153-c8pbvaeve76vps3t7to122ucu08t91e9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3KxeDVZbnhDrt8XwuTqrCZPx6KOi5IvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072067674153-c8pbvaeve76vps3t7to122ucu08t91e9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
