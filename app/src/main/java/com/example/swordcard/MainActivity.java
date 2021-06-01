@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
-    Vector<WordEntry> list = new Vector<WordEntry>();
+    List<WordEntry> list = new Vector<WordEntry>();
     Button btn;
 
     @Override
@@ -20,8 +20,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         WordModule a = new WordModule(MainActivity.this);
-        WordEntry entry = new WordEntry("apple","사과");
-        list.add(entry);
+        System.out.println("HELLO");
+        a.removeWord("Car");
+        System.out.println("Words:"+a.getAllWords());
+
+        list = a.getAllWords(); // db에서 단어 데이터를 받아온다.
 
         
         //촬영모드
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        
+
         //퀴즈모드
         btn = (Button)findViewById(R.id.OpenQuiz);
         btn.setOnClickListener(new View.OnClickListener() {
