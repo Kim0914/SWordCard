@@ -25,6 +25,7 @@ public class WordListActivity extends AppCompatActivity {
     public ListView listview;
     private EditText mWordInput;
     private EditText mMeanInput;
+    WordModule newModule = new WordModule(WordListActivity.this);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class WordListActivity extends AppCompatActivity {
                 }
                 else{
                     WordEntry entry = new WordEntry(word,mean);
-                    //a.addWord(entry);
+                    newModule.addWord(entry);
                     Toast.makeText(getApplicationContext(), "단어가 추가되었습니다!!.",Toast.LENGTH_LONG).show();
                 }
             }
