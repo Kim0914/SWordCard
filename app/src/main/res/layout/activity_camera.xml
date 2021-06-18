@@ -11,6 +11,13 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
+    <com.theartofdev.edmodo.cropper.CropImageView
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -28,6 +35,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="OPEN" />
+
+    <Button
+        android:id="@+id/crop_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="listen" />
 
     <Button
         android:id="@+id/Close"

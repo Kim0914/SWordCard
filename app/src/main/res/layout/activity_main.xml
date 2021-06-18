@@ -43,11 +43,11 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/OpenTranslate"
+        android:id="@+id/OpenCrop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="408dp"
-        android:text="번역"
+        android:layout_marginTop="500dp"
+        android:text="자르기"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

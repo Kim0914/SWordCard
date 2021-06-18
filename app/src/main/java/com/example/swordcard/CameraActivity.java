@@ -36,6 +36,7 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -51,20 +52,30 @@ import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
+import android.speech.tts.TextToSpeech;
 
-public class CameraActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class CameraActivity extends AppCompatActivity implements View.OnClickListener{
     final String TAG = getClass().getSimpleName();
     ImageView imageView;
+    CropImageView cropImageView;
     Button cameraBtn;
     Button closeBtn;
     TextView mTextView;
     TextView mTransView;
+
     final static int TAKE_PICTURE = 1;
 
     public String mCurrentPhotoPath;
     public String word;
     static final int REQUEST_TAKE_PHOTO = 1;
+
+    class TTS implements TextToSpeech.OnInitListener{
+        private TextToSpeech tts;
+        @Override
+        public void onInit(int status) {
+
+        }
+    }
 
     class Translate extends AsyncTask<String,Void,String> {
 
@@ -110,6 +121,8 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
             return null;
         }
     }
+
+
 
     public static Bitmap rotateImage(Bitmap source, float angle) {
         Matrix matrix = new Matrix();
@@ -169,6 +182,10 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         closeBtn  = findViewById(R.id.Close);
         mTextView = findViewById(R.id.textView);
         mTransView = findViewById(R.id.translateView);
+        cropImageView = findViewById(R.id.cropImageView);
+        //ttsBtn = findViewById(R.id.tts_button);
+
+
 
         // 카메라 버튼에 리스터 추가
         cameraBtn.setOnClickListener(this);
@@ -276,8 +293,8 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
                     break;
                 }
             }
-
-        } catch (Exception error) {
+        }
+        catch (Exception error) {
             error.printStackTrace();
         }
     }

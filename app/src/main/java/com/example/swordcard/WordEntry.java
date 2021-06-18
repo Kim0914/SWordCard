@@ -3,8 +3,8 @@ package com.example.swordcard;
 import java.util.Date;
 
 public class WordEntry {
-    private String english = "";
-    private String mean = "";
+    public String english = "";
+    public String mean = "";
     private Date date;
     public WordEntry(String english,String mean){
         this.english = english;

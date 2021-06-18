@@ -9,30 +9,25 @@
 
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/korWord"
-            android:layout_width="250dp"
-            android:layout_height="66dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginEnd="120dp"
-            android:layout_marginBottom="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text=""
+            android:gravity="center"
             android:textColor="@color/purple_700"
             android:textSize="40dp"
-            android:textStyle="italic|bold" />
+            android:textStyle="italic|bold"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="120dp" />
 
         <EditText
             android:id="@+id/edit_answer"
@@ -49,6 +44,15 @@
             android:layout_alignRight="@+id/edit_answer"
             android:padding="10dp"
             android:text="Enter" />
+
+        <Button
+            android:id="@+id/btn_Pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_answer"
+            android:layout_alignLeft="@+id/edit_answer"
+            android:padding="10dp"
+            android:text="PASS" />
 
         <Button
             android:id="@+id/btn_Exit"
