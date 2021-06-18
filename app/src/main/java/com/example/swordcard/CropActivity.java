@@ -4,14 +4,19 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -31,11 +36,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Locale;
 
-public class CropActivity extends AppCompatActivity {
+public class CropActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
     public String word;
+    private TextToSpeech tts;
     TextView mTextView;
     TextView mTransView;
+    Button mTTS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +51,51 @@ public class CropActivity extends AppCompatActivity {
         setContentView(R.layout.activity_crop);
         mTextView = findViewById(R.id.crop_textView);
         mTransView = findViewById(R.id.crop_translate);
+        mTTS = findViewById(R.id.tts_btn);
+        tts = new TextToSpeech(this, this);
+        mTTS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 
+            public void onClick(View v) {
+                speak();
+            }
+
+        });
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void speak() {
+        CharSequence text = word;
+        tts.setPitch((float) 1.0);
+        tts.setSpeechRate((float) 1.0);
+        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, "id1");
+    }
+
+    @Override public void onDestroy() {
+        if (tts != null) {
+            tts.stop();
+            tts.shutdown();
+        }
+        super.onDestroy();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override public void onInit(int status) {
+        if (status == TextToSpeech.SUCCESS) {
+            int result = tts.setLanguage(Locale.KOREA);
+            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                Log.e("TTS", "This Language is not supported"); }
+            else {
+                //btn_Speak.setEnabled(true);
+                //speak();
+            }
+        }
+        else {
+            Log.e("TTS", "Initilization Failed!");
+        }
+    }
+
 
 
     /** Start pick image activity with chooser. */
