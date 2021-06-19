@@ -40,7 +40,9 @@
         android:layout_marginEnd="40dp"
         android:text="추가"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/meanedit" />
+        app:layout_constraintTop_toBottomOf="@+id/meanedit"
+        android:textStyle="bold"
+        />
 
     <Button
         android:id="@+id/OpenList"
@@ -52,7 +54,9 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:textStyle="bold"
+        />
 
     <Button
         android:id="@+id/OpenQuiz"
@@ -64,7 +68,9 @@
         app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:textStyle="bold"
+        />
 
     <Button
         android:id="@+id/OpenCrop"
@@ -76,7 +82,9 @@
         app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:textStyle="bold"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

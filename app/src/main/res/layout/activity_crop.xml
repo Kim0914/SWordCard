@@ -39,7 +39,9 @@
         android:text="LISTEN"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/crop_translate" />
+        app:layout_constraintTop_toBottomOf="@+id/crop_translate"
+        android:textStyle="bold"
+        />
 
     <Button
         android:id="@+id/button"
@@ -52,6 +54,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tts_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/tts_btn"
+        android:textStyle="bold"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,7 +25,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="35dp"
-            android:textStyle="italic|bold"
+            android:textStyle="bold"
             android:layout_centerHorizontal="true"
             android:layout_margin="120dp" />
 
@@ -44,7 +44,9 @@
             android:layout_alignRight="@+id/edit_answer"
             android:padding="10dp"
             android:text="Enter"
-            android:backgroundTint="@color/black"/>
+            android:backgroundTint="@color/black"
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/btn_Pass"
@@ -54,7 +56,9 @@
             android:layout_alignLeft="@+id/edit_answer"
             android:padding="10dp"
             android:text="PASS"
-            android:backgroundTint="@color/black"/>
+            android:backgroundTint="@color/black"
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/btn_Exit"
@@ -64,7 +68,9 @@
             android:padding="10dp"
             android:layout_alignLeft="@+id/btn_Enter"
             android:layout_alignParentBottom="true"
-            android:backgroundTint="@color/black"/>
+            android:backgroundTint="@color/black"
+            android:textStyle="bold"
+            />
 
 
     </RelativeLayout>
