@@ -2,6 +2,7 @@ package com.example.swordcard;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -36,13 +37,15 @@ public class QuizActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         KorWord = findViewById(R.id.korWord);
+        KorWord.setSingleLine(true); //한줄로 나오게 하기.
+        KorWord.setEllipsize(TextUtils.TruncateAt.MARQUEE);//Ellipsize의 MARQUEE 속성 주기
+        KorWord.setSelected(true); //해당 텍스트뷰에 포커스가 없어도 문자 흐르게 하기
+
+
         editText = findViewById(R.id.edit_answer);
         btn_Exit = findViewById(R.id.btn_Exit);
         btn_enter = findViewById(R.id.btn_Enter);
         btn_Pass = findViewById(R.id.btn_Pass);
-
-
-
 
         r = new Random();
         answer = editText.getText().toString();
