@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                     WordEntry entry = new WordEntry(word,mean);
                     a.addWord(entry);
                     Toast.makeText(getApplicationContext(), "단어가 추가되었습니다!!",Toast.LENGTH_LONG).show();
+                    mWordInput.setText(null);
+                    mMeanInput.setText(null);
                 }
 
 
@@ -50,16 +52,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        
-        //촬영모드
-        btn = (Button)findViewById(R.id.OpenCam);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,CameraActivity.class);
-                startActivity(intent);
-            }
-        });
 
         //단어장모드
         btn = (Button)findViewById(R.id.OpenList);
@@ -71,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //단어장모드
+        //카메라와 Crop기능 구현
         btn = (Button)findViewById(R.id.OpenCrop);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
