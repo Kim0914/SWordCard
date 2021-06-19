@@ -83,12 +83,12 @@ public class CropActivity extends AppCompatActivity implements TextToSpeech.OnIn
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override public void onInit(int status) {
         if (status == TextToSpeech.SUCCESS) {
-            int result = tts.setLanguage(Locale.KOREA);
+            int result = tts.setLanguage(Locale.ENGLISH);
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e("TTS", "This Language is not supported"); }
             else {
                 //btn_Speak.setEnabled(true);
-                //speak();
+                speak();
             }
         }
         else {
