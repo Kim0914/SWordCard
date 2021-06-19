@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Sync Cloud"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="@color/black"/>
 
     <Button
         android:id="@+id/Close"
@@ -20,7 +21,8 @@
         android:layout_height="wrap_content"
         android:text="Close"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/black"/>
 
     <ListView
         android:id="@+id/wordlist"
