@@ -36,6 +36,7 @@ public class WordListActivity extends AppCompatActivity {
     private List<WordEntry> show_list;
     private WordsCloud wc;
     private WordModule wordModule;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
