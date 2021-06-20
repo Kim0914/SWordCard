@@ -1,9 +1,12 @@
 package com.example.swordcard;
 
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -28,7 +31,11 @@ import java.util.List;
 public class WordListActivity extends AppCompatActivity {
     public Button btn;
     public Button sync_btn;
-    public ListView listview;
+    private ListView listview;
+    private ArrayAdapter adapter;
+    private List<WordEntry> show_list;
+    private WordsCloud wc;
+    private WordModule wordModule;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,28 +48,9 @@ public class WordListActivity extends AppCompatActivity {
                 finish();
             }
         });
-/*
-        btn2 = (Button)findViewById(R.id.query);
-        btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                System.out.println("hello");
-            }
-        });
-*/
-//        System.out.println("Works");
-        WordModule wordModule = new WordModule(this);
-/*
-        wordModule.addWord("Test","시험");
-        wordModule.addWord("Death","죽음");
-        String test_Str = "{\"Happy\":\"행복한\",\"Sad\":\"슬픈\"}";
-        wordModule.fromJSON(test_Str);
-        wordModule.clear();
-*/
-        WordsCloud wc = new WordsCloud(this);
-//        System.out.println("JSON:"+wordModule.getAllWords());
+        wordModule = new WordModule(this);
 
-
+        wc = new WordsCloud(this);
         sync_btn = (Button)findViewById(R.id.Download);
         sync_btn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -74,9 +62,42 @@ public class WordListActivity extends AppCompatActivity {
         });
 
 // 리스트 출력
-        List<WordEntry> test_list = wordModule.getAllWords();
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, test_list);
+        show_list = wordModule.getAllWords();
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, show_list);
         listview = (ListView)findViewById(R.id.wordlist);
         listview.setAdapter(adapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                deleteAlert("다음 단어를 삭제하시겠습니까?",show_list.get(position).toString(), position);
+            }
+        });
+    }
+    private void deleteAlert(String title, String message,int position)
+    {
+//        WordModule
+        new AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage(message)
+                .setCancelable(true)
+                .setPositiveButton("삭제", new DialogInterface.OnClickListener()
+                {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        WordEntry word = show_list.get(position);
+                        show_list.remove(position);
+                        adapter.notifyDataSetChanged();
+                        wordModule.removeWord(word.english);
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("취소", new DialogInterface.OnClickListener()
+                {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
     }
 }

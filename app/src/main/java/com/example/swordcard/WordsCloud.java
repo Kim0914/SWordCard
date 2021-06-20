@@ -18,7 +18,8 @@ import java.util.Map;
 public class WordsCloud {
     Context context;
     WordModule local_words;
-    String ip = "http://10.0.2.2:3000";
+    String ip = "http://3.141.100.233:3000";
+//    String ip = "http://10.0.2.2:3000";
     public WordsCloud(Context context){
         this.context= context;
         local_words = new WordModule(context);
