@@ -47,12 +47,6 @@
         </activity>
 
         <activity
-            android:name=".SubActivity"
-            android:label="테스트용"
-            >
-        </activity>
-
-        <activity
             android:name=".WordListActivity"
             android:label="단어 리스트"
             >

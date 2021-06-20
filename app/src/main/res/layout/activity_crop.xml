@@ -11,8 +11,12 @@
         android:id="@+id/crop_textView"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="55dp"
         android:gravity="center"
         android:text=""
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/crop_translate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,40 +26,49 @@
         android:id="@+id/crop_translate"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginTop="161dp"
         android:gravity="center"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/tts_btn"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crop_textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/tts_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="82dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="8dp"
         android:text="LISTEN"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/crop_translate"
         android:textStyle="bold"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/add_btn"
+        app:layout_constraintTop_toBottomOf="@+id/crop_translate" />
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="17dp"
+        android:text="ADD"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tts_btn"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="97dp"
         android:onClick="onSelectImageClick"
         android:text="TAKE A PHOTO"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tts_btn"
-        android:textStyle="bold"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

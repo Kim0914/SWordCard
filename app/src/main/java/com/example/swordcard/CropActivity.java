@@ -40,10 +40,12 @@ import java.util.Locale;
 
 public class CropActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
     public String word;
+    public String mean;
     private TextToSpeech tts;
     TextView mTextView;
     TextView mTransView;
     Button mTTS;
+    Button mAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,18 @@ public class CropActivity extends AppCompatActivity implements TextToSpeech.OnIn
         mTextView = findViewById(R.id.crop_textView);
         mTransView = findViewById(R.id.crop_translate);
         mTTS = findViewById(R.id.tts_btn);
+        mAdd = findViewById(R.id.add_btn);
+
+        mAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WordModule newModule = new WordModule(CropActivity.this);
+                word = word.toLowerCase();
+                newModule.addWord(word,mean);
+                Toast.makeText(getApplicationContext(), "단어가 저장되었습니다",Toast.LENGTH_LONG).show();
+            }
+        });
+
         tts = new TextToSpeech(this, this);
         mTTS.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,7 +134,6 @@ public class CropActivity extends AppCompatActivity implements TextToSpeech.OnIn
                                         @Override
                                         public void onSuccess(Text visionText) {
                                             word = visionText.getText();
-
                                             TranslateWord papa = new TranslateWord();
                                             papa.execute();
                                         }
@@ -176,12 +189,11 @@ public class CropActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 }
                 br.close();
                 //System.out.println(response.toString());
-                String mean = response.toString();
+                mean = response.toString();
                 mean = mean.split("\"")[27];
                 mTextView.setText(word);
                 mTransView.setText(mean);
-                WordModule newModule = new WordModule(CropActivity.this);
-                newModule.addWord(word,mean);
+
             } catch (Exception e) {
                 System.out.println(e);
             }

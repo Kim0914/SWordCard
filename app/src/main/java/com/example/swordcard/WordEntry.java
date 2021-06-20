@@ -13,11 +13,8 @@ public class WordEntry {
 
     @Override
     public String toString() {
-        return "WordEntry{" +
-                "english='" + english + '\'' +
-                ", mean='" + mean + '\'' +
-                ", date=" + date +
-                '}';
+        String data = english + "    |    " + mean;
+        return data;
     }
 
     public String get_mean() {return this.mean;}

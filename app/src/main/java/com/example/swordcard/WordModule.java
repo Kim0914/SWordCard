@@ -75,6 +75,44 @@ public class WordModule extends SQLiteOpenHelper {
         catch(Exception e){}
         return list;
     }
+
+    public String getWords(int pos){
+        String english = "";
+        String mean = "";
+        ArrayList<WordEntry> list = new ArrayList<WordEntry>();
+        try {
+            Cursor c = db.query("word", null, null, null, null, null, null, null);
+
+            c.moveToFirst();
+            while (c.getPosition() < c.getCount()) {
+                if(c.getPosition() == pos) {
+                    english = c.getString(c.getColumnIndex("english"));
+                    break;
+                }
+                c.moveToNext();
+            }
+        }
+        catch(Exception e){}
+        return english;
+    }
+    public String getMeans(int pos){
+        String mean = "";
+        ArrayList<WordEntry> list = new ArrayList<WordEntry>();
+        try {
+            Cursor c = db.query("word", null, null, null, null, null, null, null);
+
+            c.moveToFirst();
+            while (c.getPosition() < c.getCount()) {
+                if(c.getPosition() == pos) {
+                    mean = c.getString(c.getColumnIndex("mean"));
+                    break;
+                }
+                c.moveToNext();
+            }
+        }
+        catch(Exception e){}
+        return mean;
+    }
     public String toJSON() {
         List<WordEntry> list = getAllWords();
         JSONObject json = new JSONObject();
