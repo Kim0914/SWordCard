@@ -13,7 +13,7 @@ public class WordEntry {
 
     @Override
     public String toString() {
-        String data = english + "    |    " + mean;
+        String data = english +"\n" + mean;
         return data;
     }
 

@@ -25,6 +25,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="35dp"
+            android:fontFamily="@font/nanumbarunpenb"
             android:layout_centerHorizontal="true"
             android:layout_margin="120dp" />
 
@@ -41,9 +42,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_answer"
             android:layout_alignRight="@+id/edit_answer"
+            android:drawableTop="@drawable/ic_baseline_subdirectory_arrow_left_24"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:padding="10dp"
             android:text="Enter"
-            android:backgroundTint="@color/black"
             android:textStyle="bold"
             />
 
@@ -53,21 +56,24 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_answer"
             android:layout_alignLeft="@+id/edit_answer"
+            android:backgroundTint="@color/white"
+            android:drawableTop="@drawable/ic_baseline_double_arrow_24"
             android:padding="10dp"
             android:text="PASS"
-            android:backgroundTint="@color/black"
-            android:textStyle="bold"
-            />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_Exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exit"
+            android:drawableTop="@drawable/ic_baseline_reply_24"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:padding="10dp"
             android:layout_alignLeft="@+id/btn_Enter"
             android:layout_alignParentBottom="true"
-            android:backgroundTint="@color/black"
             android:textStyle="bold"
             />
 

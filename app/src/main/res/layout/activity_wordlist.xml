@@ -11,24 +11,30 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Sync Cloud"
+        android:drawableTop="@drawable/ic_outline_cloud_upload_24"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
-        android:backgroundTint="@color/black"/>
+        />
 
     <Button
         android:id="@+id/Close"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Close"
+        android:text="EXIT"
+        android:drawableTop="@drawable/ic_baseline_reply_24"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/black"/>
+        />
 
     <ListView
         android:id="@+id/wordlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="-16dp">
 
