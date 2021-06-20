@@ -22,7 +22,7 @@
         android:id="@+id/Close"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Close"
+        android:text="EXIT"
         android:drawableTop="@drawable/ic_baseline_reply_24"
         android:backgroundTint="@color/white"
         android:textColor="@color/black"

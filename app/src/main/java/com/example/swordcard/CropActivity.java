@@ -46,6 +46,8 @@ public class CropActivity extends AppCompatActivity implements TextToSpeech.OnIn
     TextView mTransView;
     Button mTTS;
     Button mAdd;
+    Button mExit;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class CropActivity extends AppCompatActivity implements TextToSpeech.OnIn
         mTransView = findViewById(R.id.crop_translate);
         mTTS = findViewById(R.id.tts_btn);
         mAdd = findViewById(R.id.add_btn);
+        mExit = findViewById(R.id.btn_cropExit);
 
         mAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +66,13 @@ public class CropActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 word = word.toLowerCase();
                 newModule.addWord(word,mean);
                 Toast.makeText(getApplicationContext(), "단어가 저장되었습니다",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        mExit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
@@ -76,6 +86,8 @@ public class CropActivity extends AppCompatActivity implements TextToSpeech.OnIn
             }
 
         });
+
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -93,6 +105,8 @@ public class CropActivity extends AppCompatActivity implements TextToSpeech.OnIn
         }
         super.onDestroy();
     }
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override public void onInit(int status) {
