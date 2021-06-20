@@ -48,13 +48,13 @@
 
         <activity
             android:name=".WordListActivity"
-            android:label="단어 리스트"
+            android:label="WORDLIST"
             >
         </activity>
 
         <activity
             android:name=".QuizActivity"
-            android:label="퀴즈" />
+            android:label="Quiz" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

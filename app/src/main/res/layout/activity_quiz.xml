@@ -25,6 +25,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="35dp"
+            android:fontFamily="@font/nanumbarunpenb"
             android:layout_centerHorizontal="true"
             android:layout_margin="120dp" />
 

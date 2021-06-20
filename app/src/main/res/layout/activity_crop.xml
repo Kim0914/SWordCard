@@ -17,6 +17,7 @@
         android:text=""
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:fontFamily="@font/nanumbarunpenb"
         app:layout_constraintBottom_toTopOf="@+id/crop_translate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +32,7 @@
         android:text=""
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:fontFamily="@nanumbarunpenb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
